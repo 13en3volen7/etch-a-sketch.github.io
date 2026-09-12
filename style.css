@@ -7,12 +7,10 @@ body {
 }
 
 #container {
+    display: flex;
+    flex-wrap: wrap;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
-}
-
-.grid-row {
-    display: flex;
     width: 550px;
 }
 
