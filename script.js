@@ -1,21 +1,21 @@
 function initialize(gridSize = 16) {
     const containerDiv = document.querySelector("#container");
 
-    function createSquareTemplate() {
-        const squareDiv = document.createElement("div");
-        const squareSize = containerDiv.clientWidth / gridSize;
-        squareDiv.style.width = `${squareSize}px`;
-        squareDiv.style.height = `${squareSize}px`;
-        return squareDiv;
+    function createCellTemplate() {
+        const cellDiv = document.createElement("div");
+        const cellSize = containerDiv.clientWidth / gridSize;
+        cellDiv.style.width = `${cellSize}px`;
+        cellDiv.style.height = `${cellSize}px`;
+        return cellDiv;
     }
 
     function makeGrid() {
-        const squareDiv = createSquareTemplate();
+        const cellDiv = createCellTemplate();
         for (let row = 1; row <= gridSize; row++) {
             for (let column = 1; column <= gridSize; column++) {
-                const squareDivClone = squareDiv.cloneNode();
-                squareDivClone.classList.add("square", `r${row}`, `c${column}`);
-                containerDiv.appendChild(squareDivClone);
+                const cellDivClone = cellDiv.cloneNode();
+                cellDivClone.classList.add("cell", `r${row}`, `c${column}`);
+                containerDiv.appendChild(cellDivClone);
             }
         }
     }
@@ -40,7 +40,7 @@ function getRandomRGBValue() {
 
 function handleMouseOver(event) {
     const target = event.target;
-    if (!target.classList.contains("square")) {
+    if (!target.classList.contains("cell")) {
         return;
     }
     const [r, g, b] = getRandomRGBValue();
