@@ -45,7 +45,7 @@ function getRandomRGBValue() {
 
 function handleMouseOver(event) {
     const target = event.target;
-    if (!target.classList.contains("cell")) {
+    if (!target.className.startsWith("cell")) {
         return;
     }
     const [r, g, b] = getRandomRGBValue();
