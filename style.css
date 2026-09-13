@@ -1,4 +1,4 @@
-body {
+body, #container {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -6,9 +6,9 @@ body {
     gap: 10px;
 }
 
-#container {
+.grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     width: 550px;
