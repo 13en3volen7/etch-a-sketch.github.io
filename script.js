@@ -67,6 +67,14 @@ function handleMouseClick(event) {
                 initialize(newSize);
             }
             return;
+
+        case "clear":
+            const containerDiv = target.closest("#container");
+            const gridDiv = containerDiv.querySelector(".grid");
+            for (let node of gridDiv.childNodes) {
+                node.style.backgroundColor = "";
+            }
+            return;
     }
 }
 
